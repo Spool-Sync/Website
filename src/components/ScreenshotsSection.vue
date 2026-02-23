@@ -46,14 +46,20 @@
 import { ref, computed } from 'vue'
 
 const tabs = [
-  { id: 'storage',   label: 'Storage',   path: 'storage',   img: '/screenshots/storage.png' },
-  { id: 'spools',    label: 'Filament',  path: 'filament',  img: '/screenshots/spools.png' },
-  { id: 'inventory', label: 'Inventory', path: 'inventory', img: '/screenshots/inventory.png' },
-  { id: 'printers',  label: 'Printers',  path: 'printers',  img: '/screenshots/printers.png' },
-  { id: 'scales',    label: 'Scales',    path: 'spool-holders', img: '/screenshots/scales.png' },
+  { id: 'dashboard',  label: 'Dashboard',  path: 'dashboard',     img: '/screenshots/dashboard.png' },
+  { id: 'spools',     label: 'Filament',   path: 'spools',        img: '/screenshots/spools.png' },
+  { id: 'inventory',  label: 'Inventory',  path: 'inventory',     img: '/screenshots/inventory.png' },
+  { id: 'storage',    label: 'Storage',    path: 'storage',       img: '/screenshots/storage.png' },
+  { id: 'printers',   label: 'Printers',   path: 'printers',      img: '/screenshots/printers.png' },
+  { id: 'scales',     label: 'Scales',     path: 'spool-holders', img: '/screenshots/scales.png' },
+  { id: 'orders',     label: 'Orders',     path: 'orders',        img: '/screenshots/orders.png' },
+  { id: 'esp32',      label: 'ESP32',      path: 'esp32-devices', img: '/screenshots/esp32.png' },
+  { id: 'weigh',      label: 'Weigh',      path: 'weigh',         img: '/screenshots/weigh.png' },
+  { id: 'settings',   label: 'Settings',   path: 'settings',      img: '/screenshots/settings.png' },
+  { id: 'users',      label: 'Users',      path: 'admin/users',   img: '/screenshots/users.png' },
 ]
 
-const active = ref('storage')
+const active = ref('dashboard')
 const currentTab = computed(() => tabs.find(t => t.id === active.value))
 </script>
 

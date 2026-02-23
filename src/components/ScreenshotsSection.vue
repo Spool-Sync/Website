@@ -56,7 +56,6 @@ const tabs = [
   { id: 'esp32',      label: 'ESP32',      path: 'esp32-devices', img: '/screenshots/esp32.png' },
   { id: 'weigh',      label: 'Weigh',      path: 'weigh',         img: '/screenshots/weigh.png' },
   { id: 'settings',   label: 'Settings',   path: 'settings',      img: '/screenshots/settings.png' },
-  { id: 'users',      label: 'Users',      path: 'admin/users',   img: '/screenshots/users.png' },
 ]
 
 const active = ref('dashboard')

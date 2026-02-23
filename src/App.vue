@@ -4,6 +4,7 @@
     <HeroSection />
     <StatsSection />
     <FeaturesSection />
+    <ScreenshotsSection />
     <HowItWorksSection />
     <IntegrationsSection />
     <CtaSection />
@@ -17,6 +18,7 @@ import HeroSection from './components/HeroSection.vue'
 import StatsSection from './components/StatsSection.vue'
 import FeaturesSection from './components/FeaturesSection.vue'
 import HowItWorksSection from './components/HowItWorksSection.vue'
+import ScreenshotsSection from './components/ScreenshotsSection.vue'
 import IntegrationsSection from './components/IntegrationsSection.vue'
 import CtaSection from './components/CtaSection.vue'
 import FooterSection from './components/FooterSection.vue'

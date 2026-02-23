@@ -24,7 +24,7 @@
                 </svg>
                 Clone on GitHub
               </a>
-              <a href="#how-it-works" class="btn btn-ghost">Read the docs</a>
+              <a href="https://github.com/Spool-Sync/SpoolSync-App/wiki" target="_blank" rel="noopener" class="btn btn-ghost">Documentation</a>
             </div>
           </div>
 

@@ -41,41 +41,18 @@
         </div>
       </div>
 
-      <!-- Right: dashboard mockup -->
+      <!-- Right: real app screenshot -->
       <div class="hero-visual reveal reveal-delay-2">
-        <div class="dashboard-card">
-          <div class="card-header">
-            <div class="card-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <span class="card-title-text">Filament Inventory</span>
+        <div class="app-frame">
+          <div class="frame-bar">
+            <div class="frame-dots"><span></span><span></span><span></span></div>
+            <span class="frame-url">spoolsync.local / filament</span>
             <div class="live-badge">
               <span class="live-dot"></span>
               Live
             </div>
           </div>
-
-          <div class="spool-list">
-            <SpoolRow color="#6699ff" brand="Prusament" name="PLA Galaxy Black" weight="847" max="1000" />
-            <SpoolRow color="#ff6b6b" brand="eSUN"      name="PETG Red"         weight="412" max="1000" />
-            <SpoolRow color="#51cf66" brand="Bambu"     name="PLA Matte Green"  weight="950" max="1000" />
-            <SpoolRow color="#ffd43b" brand="Polymaker" name="ASA Yellow"       weight="203" max="800" warn />
-          </div>
-
-          <div class="card-footer">
-            <div class="footer-stat">
-              <span class="footer-stat-value">4</span>
-              <span class="footer-stat-label">active spools</span>
-            </div>
-            <div class="footer-stat">
-              <span class="footer-stat-value">2.4 kg</span>
-              <span class="footer-stat-label">total remaining</span>
-            </div>
-            <div class="footer-stat warn">
-              <span class="footer-stat-value">1</span>
-              <span class="footer-stat-label">low stock</span>
-            </div>
-          </div>
+          <img src="/screenshots/spools.png" alt="SpoolSync filament inventory" class="frame-screenshot" />
         </div>
       </div>
     </div>
@@ -89,7 +66,6 @@
 </template>
 
 <script setup>
-import SpoolRow from './SpoolRow.vue'
 </script>
 
 <style scoped>
@@ -192,19 +168,18 @@ import SpoolRow from './SpoolRow.vue'
   flex-wrap: wrap;
 }
 
-/* Dashboard mockup */
+/* App screenshot frame */
 .hero-visual {
   display: flex;
   justify-content: center;
   animation: float 6s ease-in-out infinite;
 }
 
-.dashboard-card {
+.app-frame {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 420px;
   overflow: hidden;
   box-shadow:
     0 0 0 1px rgba(102, 153, 255, 0.08),
@@ -212,31 +187,31 @@ import SpoolRow from './SpoolRow.vue'
     var(--glow);
 }
 
-.card-header {
+.frame-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 18px;
-  border-bottom: 1px solid var(--border-dim);
+  padding: 11px 16px;
   background: var(--surface);
+  border-bottom: 1px solid var(--border-dim);
 }
 
-.card-dots {
+.frame-dots {
   display: flex;
   gap: 5px;
+  flex-shrink: 0;
 }
-
-.card-dots span {
+.frame-dots span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: var(--border);
 }
 
-.card-title-text {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
+.frame-url {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
   flex: 1;
 }
 
@@ -251,6 +226,7 @@ import SpoolRow from './SpoolRow.vue'
   border: 1px solid rgba(81, 207, 102, 0.2);
   border-radius: 100px;
   padding: 3px 9px;
+  flex-shrink: 0;
 }
 
 .live-dot {
@@ -261,25 +237,10 @@ import SpoolRow from './SpoolRow.vue'
   animation: pulse-ring 2s ease infinite;
 }
 
-.spool-list {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.frame-screenshot {
+  width: 100%;
+  display: block;
 }
-
-.card-footer {
-  display: flex;
-  padding: 12px 18px;
-  border-top: 1px solid var(--border-dim);
-  background: var(--surface);
-  gap: 24px;
-}
-
-.footer-stat { display: flex; flex-direction: column; gap: 2px; }
-.footer-stat-value { font-size: 15px; font-weight: 700; color: var(--text); }
-.footer-stat-label { font-size: 10px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-.footer-stat.warn .footer-stat-value { color: #ffd43b; }
 
 /* Scroll hint */
 .scroll-hint {

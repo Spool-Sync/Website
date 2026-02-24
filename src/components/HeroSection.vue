@@ -12,7 +12,7 @@
       <div class="hero-text">
         <div class="hero-badge reveal">
           <span class="badge-dot"></span>
-          Open-source · Self-hosted · Real-time
+          Open-source · Self-hosted · Real-time · SSO &amp; RBAC
         </div>
 
         <h1 class="hero-title reveal reveal-delay-1">

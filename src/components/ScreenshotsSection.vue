@@ -23,7 +23,16 @@
       <div class="screenshot-frame reveal reveal-delay-1">
         <div class="frame-bar">
           <div class="frame-dots"><span></span><span></span><span></span></div>
-          <span class="frame-url">spoolsync.local / {{ currentTab.path }}</span>
+          <span
+            class="frame-url"
+            style="
+              color: #222;
+              background: #fff;
+              padding: 2px 6px;
+              border-radius: 3px;
+            "
+            >spoolsync.local / {{ currentTab.path }}</span
+          >
           <div class="live-chip"><span class="live-dot"></span>Live</div>
         </div>
         <div class="screenshot-wrap">
@@ -32,7 +41,7 @@
               <source :srcset="tab.img" type="image/webp" />
               <img
                 :src="tab.fallback"
-                :alt="tab.label"
+                :alt="tab.label + ' screenshot'"
                 :class="['screenshot-img', { visible: active === tab.id }]"
                 loading="lazy"
               />

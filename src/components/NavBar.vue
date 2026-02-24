@@ -38,7 +38,7 @@
         @click="mobileOpen = !mobileOpen"
         aria-label="Toggle menu"
         aria-controls="nav-mobile"
-        aria-expanded="mobileOpen"
+        :aria-expanded="mobileOpen.toString()"
       >
         <span :class="{ active: mobileOpen }"></span>
         <span :class="{ active: mobileOpen }"></span>

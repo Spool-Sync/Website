@@ -1,13 +1,16 @@
 <template>
-  <section class="stats-section">
+  <section class="stats-section" aria-labelledby="stats-title">
     <div class="container">
+      <h2 id="stats-title" class="visually-hidden">Key Statistics</h2>
       <div class="stats-grid">
         <div
           v-for="(stat, i) in stats"
           :key="stat.label"
           :class="['stat-item', 'reveal', `reveal-delay-${i + 1}`]"
         >
-          <div class="stat-value gradient-text">{{ stat.value }}</div>
+          <div class="stat-value gradient-text" tabindex="0">
+            {{ stat.value }}
+          </div>
           <div class="stat-label">{{ stat.label }}</div>
         </div>
       </div>
@@ -17,11 +20,11 @@
 
 <script setup>
 const stats = [
-  { value: '100+',   label: 'Filament brands tracked' },
-  { value: 'Live',   label: 'Real-time weight updates' },
-  { value: 'NFC',    label: 'Tap-to-identify spools' },
-  { value: '100%',   label: 'Self-hosted & private' },
-]
+  { value: "100+", label: "Filament brands tracked" },
+  { value: "Live", label: "Real-time weight updates" },
+  { value: "NFC", label: "Tap-to-identify spools" },
+  { value: "100%", label: "Self-hosted & private" },
+];
 </script>
 
 <style scoped>
@@ -49,7 +52,9 @@ const stats = [
   transition: background 0.2s;
 }
 
-.stat-item:hover { background: var(--card); }
+.stat-item:hover {
+  background: var(--card);
+}
 
 .stat-value {
   font-size: 36px;
@@ -66,10 +71,26 @@ const stats = [
 }
 
 @media (max-width: 720px) {
-  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 440px) {
-  .stats-grid { grid-template-columns: 1fr; }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

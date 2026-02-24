@@ -76,6 +76,7 @@
             style="
               background: url(&quot;/screenshots/spools.png&quot;) no-repeat
                 center/cover;
+              border: 2px solid #222;
             "
           />
         </div>

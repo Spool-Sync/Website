@@ -68,10 +68,15 @@
             </div>
           </div>
           <img
-            src="/screenshots/spools.png"
+            src="/screenshots/spools.webp"
+            srcset="/screenshots/spools.webp 1x, /screenshots/spools.png 1x"
             alt="Screenshot of SpoolSync filament inventory dashboard"
             class="frame-screenshot"
             loading="lazy"
+            style="
+              background: url(&quot;/screenshots/spools.png&quot;) no-repeat
+                center/cover;
+            "
           />
         </div>
       </div>

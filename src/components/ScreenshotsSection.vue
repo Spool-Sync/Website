@@ -27,14 +27,17 @@
           <div class="live-chip"><span class="live-dot"></span>Live</div>
         </div>
         <div class="screenshot-wrap">
-          <img
-            v-for="tab in tabs"
-            :key="tab.id"
-            :src="tab.img"
-            :alt="tab.label"
-            :class="['screenshot-img', { visible: active === tab.id }]"
-            loading="lazy"
-          />
+          <template v-for="tab in tabs" :key="tab.id">
+            <picture>
+              <source :srcset="tab.img" type="image/webp" />
+              <img
+                :src="tab.fallback"
+                :alt="tab.label"
+                :class="['screenshot-img', { visible: active === tab.id }]"
+                loading="lazy"
+              />
+            </picture>
+          </template>
         </div>
       </div>
     </div>
@@ -49,56 +52,71 @@ const tabs = [
     id: "dashboard",
     label: "Dashboard",
     path: "dashboard",
-    img: "/screenshots/dashboard.png",
+    img: "/screenshots/dashboard.webp",
+    fallback: "/screenshots/dashboard.png",
   },
   {
     id: "spools",
     label: "Filament",
     path: "spools",
-    img: "/screenshots/spools.png",
+    img: "/screenshots/spools.webp",
+    fallback: "/screenshots/spools.png",
   },
   {
     id: "inventory",
     label: "Inventory",
     path: "inventory",
-    img: "/screenshots/inventory.png",
+    img: "/screenshots/inventory.webp",
+    fallback: "/screenshots/inventory.png",
   },
   {
     id: "storage",
     label: "Storage",
     path: "storage",
-    img: "/screenshots/storage.png",
+    img: "/screenshots/storage.webp",
+    fallback: "/screenshots/storage.png",
   },
   {
     id: "printers",
     label: "Printers",
     path: "printers",
-    img: "/screenshots/printers.png",
+    img: "/screenshots/printers.webp",
+    fallback: "/screenshots/printers.png",
   },
   {
     id: "scales",
     label: "Scales",
     path: "spool-holders",
-    img: "/screenshots/scales.png",
+    img: "/screenshots/scales.webp",
+    fallback: "/screenshots/scales.png",
   },
   {
     id: "orders",
     label: "Orders",
     path: "orders",
-    img: "/screenshots/orders.png",
+    img: "/screenshots/orders.webp",
+    fallback: "/screenshots/orders.png",
   },
   {
     id: "esp32",
     label: "ESP32",
     path: "esp32-devices",
-    img: "/screenshots/esp32.png",
+    img: "/screenshots/esp32.webp",
+    fallback: "/screenshots/esp32.png",
   },
-  { id: "weigh", label: "Weigh", path: "weigh", img: "/screenshots/weigh.png" },
+  {
+    id: "weigh",
+    label: "Weigh",
+    path: "weigh",
+    img: "/screenshots/weigh.webp",
+    fallback: "/screenshots/weigh.png",
+  },
   {
     id: "settings",
     label: "Settings",
     path: "settings",
-    img: "/screenshots/settings.png",
+    img: "/screenshots/settings.webp",
+    fallback: "/screenshots/settings.png",
   },
 ];
 

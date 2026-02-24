@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-title">
     <!-- Background grid -->
     <div class="hero-grid" aria-hidden="true"></div>
 
@@ -15,7 +15,7 @@
           Open-source · Self-hosted · Real-time · SSO &amp; RBAC
         </div>
 
-        <h1 class="hero-title reveal reveal-delay-1">
+        <h1 id="hero-title" class="hero-title reveal reveal-delay-1">
           Filament management<br />
           <span class="gradient-text">done right.</span>
         </h1>
@@ -28,13 +28,26 @@
         <div class="hero-actions reveal reveal-delay-3">
           <a href="#get-started" class="btn btn-primary">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
             Get Started Free
           </a>
-          <a href="https://github.com/Spool-Sync/SpoolSync-App" target="_blank" rel="noopener" class="btn btn-ghost">
+          <a
+            href="https://github.com/Spool-Sync/SpoolSync-App"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-ghost"
+          >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+              />
             </svg>
             View on GitHub
           </a>
@@ -45,14 +58,21 @@
       <div class="hero-visual reveal reveal-delay-2">
         <div class="app-frame">
           <div class="frame-bar">
-            <div class="frame-dots"><span></span><span></span><span></span></div>
+            <div class="frame-dots">
+              <span></span><span></span><span></span>
+            </div>
             <span class="frame-url">spoolsync.local / filament</span>
             <div class="live-badge">
               <span class="live-dot"></span>
               Live
             </div>
           </div>
-          <img src="/screenshots/spools.png" alt="SpoolSync filament inventory" class="frame-screenshot" />
+          <img
+            src="/screenshots/spools.png"
+            alt="Screenshot of SpoolSync filament inventory dashboard"
+            class="frame-screenshot"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
@@ -65,8 +85,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .hero {
@@ -85,7 +104,11 @@
     linear-gradient(var(--border-dim) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-dim) 1px, transparent 1px);
   background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    black 30%,
+    transparent 100%
+  );
   animation: grid-fade 1.2s ease forwards;
 }
 
@@ -99,7 +122,11 @@
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(102, 153, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(102, 153, 255, 0.12) 0%,
+    transparent 70%
+  );
   top: -100px;
   left: -200px;
 }
@@ -107,7 +134,11 @@
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(153, 102, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(153, 102, 255, 0.1) 0%,
+    transparent 70%
+  );
   top: 100px;
   right: -150px;
 }
@@ -211,7 +242,7 @@
 .frame-url {
   font-size: 11px;
   color: var(--text-dim);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   flex: 1;
 }
 
@@ -270,9 +301,17 @@
     text-align: center;
     padding-top: 60px;
   }
-  .hero-subtitle { margin: 0 auto 36px; }
-  .hero-actions { justify-content: center; }
-  .hero-visual { animation: none; }
-  .scroll-hint { display: none; }
+  .hero-subtitle {
+    margin: 0 auto 36px;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-visual {
+    animation: none;
+  }
+  .scroll-hint {
+    display: none;
+  }
 }
 </style>

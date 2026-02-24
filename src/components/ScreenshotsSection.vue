@@ -24,9 +24,7 @@
         <div class="frame-bar">
           <div class="frame-dots"><span></span><span></span><span></span></div>
           <span class="frame-url">spoolsync.local / {{ currentTab.path }}</span>
-          <div class="live-chip">
-            <span class="live-dot"></span>Live
-          </div>
+          <div class="live-chip"><span class="live-dot"></span>Live</div>
         </div>
         <div class="screenshot-wrap">
           <img
@@ -35,6 +33,7 @@
             :src="tab.img"
             :alt="tab.label"
             :class="['screenshot-img', { visible: active === tab.id }]"
+            loading="lazy"
           />
         </div>
       </div>
@@ -43,23 +42,68 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed } from "vue";
 
 const tabs = [
-  { id: 'dashboard',  label: 'Dashboard',  path: 'dashboard',     img: '/screenshots/dashboard.png' },
-  { id: 'spools',     label: 'Filament',   path: 'spools',        img: '/screenshots/spools.png' },
-  { id: 'inventory',  label: 'Inventory',  path: 'inventory',     img: '/screenshots/inventory.png' },
-  { id: 'storage',    label: 'Storage',    path: 'storage',       img: '/screenshots/storage.png' },
-  { id: 'printers',   label: 'Printers',   path: 'printers',      img: '/screenshots/printers.png' },
-  { id: 'scales',     label: 'Scales',     path: 'spool-holders', img: '/screenshots/scales.png' },
-  { id: 'orders',     label: 'Orders',     path: 'orders',        img: '/screenshots/orders.png' },
-  { id: 'esp32',      label: 'ESP32',      path: 'esp32-devices', img: '/screenshots/esp32.png' },
-  { id: 'weigh',      label: 'Weigh',      path: 'weigh',         img: '/screenshots/weigh.png' },
-  { id: 'settings',   label: 'Settings',   path: 'settings',      img: '/screenshots/settings.png' },
-]
+  {
+    id: "dashboard",
+    label: "Dashboard",
+    path: "dashboard",
+    img: "/screenshots/dashboard.png",
+  },
+  {
+    id: "spools",
+    label: "Filament",
+    path: "spools",
+    img: "/screenshots/spools.png",
+  },
+  {
+    id: "inventory",
+    label: "Inventory",
+    path: "inventory",
+    img: "/screenshots/inventory.png",
+  },
+  {
+    id: "storage",
+    label: "Storage",
+    path: "storage",
+    img: "/screenshots/storage.png",
+  },
+  {
+    id: "printers",
+    label: "Printers",
+    path: "printers",
+    img: "/screenshots/printers.png",
+  },
+  {
+    id: "scales",
+    label: "Scales",
+    path: "spool-holders",
+    img: "/screenshots/scales.png",
+  },
+  {
+    id: "orders",
+    label: "Orders",
+    path: "orders",
+    img: "/screenshots/orders.png",
+  },
+  {
+    id: "esp32",
+    label: "ESP32",
+    path: "esp32-devices",
+    img: "/screenshots/esp32.png",
+  },
+  { id: "weigh", label: "Weigh", path: "weigh", img: "/screenshots/weigh.png" },
+  {
+    id: "settings",
+    label: "Settings",
+    path: "settings",
+    img: "/screenshots/settings.png",
+  },
+];
 
-const active = ref('dashboard')
-const currentTab = computed(() => tabs.find(t => t.id === active.value))
+const active = ref("dashboard");
+const currentTab = computed(() => tabs.find((t) => t.id === active.value));
 </script>
 
 <style scoped>
@@ -135,7 +179,7 @@ const currentTab = computed(() => tabs.find(t => t.id === active.value))
 .frame-url {
   font-size: 11px;
   color: var(--text-dim);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   flex: 1;
 }
 

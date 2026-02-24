@@ -1,9 +1,16 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" role="contentinfo" aria-label="Footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="#" class="footer-logo">
-          <img src="/logo.svg" width="28" height="28" alt="SpoolSync" class="footer-logo-img" />
+        <a href="#" class="footer-logo" aria-label="SpoolSync Home">
+          <img
+            src="/logo.svg"
+            width="28"
+            height="28"
+            alt="SpoolSync logo"
+            class="footer-logo-img"
+            loading="lazy"
+          />
           SpoolSync
         </a>
         <p class="footer-tagline">
@@ -22,18 +29,44 @@
 
         <div class="footer-col">
           <div class="footer-col-title">Resources</div>
-          <a href="https://github.com/Spool-Sync/SpoolSync-App" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://github.com/Spool-Sync/SpoolSync-App/issues" target="_blank" rel="noopener">Report Issue</a>
-          <a href="https://github.com/Spool-Sync/SpoolSync-App/releases" target="_blank" rel="noopener">Releases</a>
-          <a href="https://github.com/Spool-Sync/SpoolSync-App/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
+          <a
+            href="https://github.com/Spool-Sync/SpoolSync-App"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://github.com/Spool-Sync/SpoolSync-App/issues"
+            target="_blank"
+            rel="noopener"
+            >Report Issue</a
+          >
+          <a
+            href="https://github.com/Spool-Sync/SpoolSync-App/releases"
+            target="_blank"
+            rel="noopener"
+            >Releases</a
+          >
+          <a
+            href="https://github.com/Spool-Sync/SpoolSync-App/blob/main/LICENSE"
+            target="_blank"
+            rel="noopener"
+            >License</a
+          >
         </div>
 
         <div class="footer-col">
           <div class="footer-col-title">Tech Stack</div>
           <a href="https://vuejs.org" target="_blank" rel="noopener">Vue 3</a>
-          <a href="https://www.prisma.io" target="_blank" rel="noopener">Prisma</a>
-          <a href="https://expressjs.com" target="_blank" rel="noopener">Express</a>
-          <a href="https://socket.io" target="_blank" rel="noopener">Socket.IO</a>
+          <a href="https://www.prisma.io" target="_blank" rel="noopener"
+            >Prisma</a
+          >
+          <a href="https://expressjs.com" target="_blank" rel="noopener"
+            >Express</a
+          >
+          <a href="https://socket.io" target="_blank" rel="noopener"
+            >Socket.IO</a
+          >
         </div>
       </div>
     </div>
@@ -72,8 +105,12 @@
   letter-spacing: -0.02em;
   margin-bottom: 14px;
 }
-.footer-logo:hover { color: var(--primary); }
-.footer-logo-img { filter: brightness(0) invert(1); }
+.footer-logo:hover {
+  color: var(--primary);
+}
+.footer-logo-img {
+  filter: brightness(0) invert(1);
+}
 
 .footer-tagline {
   font-size: 13px;
@@ -107,7 +144,9 @@
   color: var(--text-muted);
   transition: color 0.2s;
 }
-.footer-col a:hover { color: var(--text); }
+.footer-col a:hover {
+  color: var(--text);
+}
 
 .footer-bottom {
   border-top: 1px solid var(--border-dim);
@@ -123,11 +162,20 @@
 }
 
 @media (max-width: 860px) {
-  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom-inner { flex-direction: column; gap: 6px; text-align: center; }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 520px) {
-  .footer-links { grid-template-columns: 1fr 1fr; }
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>
